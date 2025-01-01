@@ -15,7 +15,7 @@ function createOptionUi(){
     tagOptions.forEach(tags => {
        const option = document.createElement("option");
        option.value = tags;
-       option.textContent = `${tags}`;
+       option.textContent = `<${tags}>`;
        tagSelect.appendChild(option)
        console.log(tags)
     });
@@ -31,6 +31,35 @@ function createOptionUi(){
     }
     function updateWordsValue(){
         wordValue.textContent = wordSlider.value;
+        console.log(wordSlider.value);
+    }
+    // lorem generator function
+    function loremGenerator() {
+        const paragraphs = parseInt(paragraphSlider.value);
+        const tag = document.getElementById("tags").value;
+        const include = document.getElementById("include").value;
+        const wordsperpara = parseInt(wordSlider.value);
+
+        const loremText = generateText(paragraphs , tag , include , wordsperpara);
+        const displayLorem = displayLoremText(loremText);
+    }
+
+    //function to generate lorem Ipsum text
+    function generateText(paragraphs , tag , include , wordsperpara){
+        // Illustration
+        const placeholder = `Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nulla, est! Quas, repudiandae a? Consequatur corporis, voluptas eius facere temporibus magni quod, cumque quia consequuntur minus voluptatem a porro exercitationem neque.`
+        // create an array of paragraphs 
+    const loremIpsumArray = new Array(paragraphs).fill("");
+
+    for (let i = 0; i < paragraphs; i++) {
+        const words = generatepara(wordsperpara);
+        
+    }
     }
     
+
 }
+
+
+
+
