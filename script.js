@@ -91,6 +91,22 @@ function generatepara(numWords) {
     function displayLoremText(loremText) {
         output.innerHTML = loremText;
     }
+
+    let clearbutton = document.querySelector(".clear");
+  function clear(button) {
+    if(button){
+        button.addEventListener("click" , button =>{
+            if(output){
+                output.innerHTML = "";
+            }else{
+                console.error("output is not found")
+            }
+        })
+    }else{
+        console.error("button not found")
+    }
+  }
+  clear(clearbutton);
 }
 
 

@@ -92,6 +92,17 @@ button:hover{
    
 }
 
+.clear{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 30px;
+}
+.clear button{
+    width: 20%;
+
+}
+
 
 
 
